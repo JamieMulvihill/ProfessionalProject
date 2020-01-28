@@ -225,6 +225,8 @@ GameObject:
   - component: {fileID: 940248502}
   - component: {fileID: 940248501}
   - component: {fileID: 940248506}
+  - component: {fileID: 940248508}
+  - component: {fileID: 940248507}
   m_Layer: 0
   m_Name: Biologist
   m_TagString: Biologist
@@ -240,7 +242,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940248500}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1.4
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -334,10 +336,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virus: {fileID: 6001971122949251976, guid: b9ce5a0f79c33394db63abeceeb7e8c5, type: 3}
-  playerFire: Fire1
+  playerFire: Fire2
   verticalVelocity: 5
   horizontalVelocity: 10
   fireRate: 0.3
+--- !u!114 &940248507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940248500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea156591892183409477e72851711cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vines: {fileID: 646117286371248911, guid: dd0705ed34e85f44eb9c91656b515a97, type: 3}
+  playerFire: Fire1
+  verticalVelocity: 5
+  horizontalVelocity: 5
+  fireRate: 1
+--- !u!114 &940248508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940248500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda637b844f75b343a774525a1e45864, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  rigidBody: {fileID: 940248501}
+  playerHOR: Horizontal
+  PlayerVer: Vertical
+  PlayerInter: PickUp
+  PlayerFire: Fire1
+  rotationSpeed: 0.1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,7 +491,7 @@ GameObject:
   - component: {fileID: 1416848435}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

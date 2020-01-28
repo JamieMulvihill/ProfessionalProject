@@ -20,14 +20,10 @@ public class VirusAttack : MonoBehaviour{
                 inst = Instantiate(virus, SpawnPoint, Quaternion.LookRotation(transform.forward, transform.up));
                 Rigidbody rigidBody = inst.GetComponent<Rigidbody>();
                 rigidBody.transform.position = SpawnPoint;
-                // rigidBody.velocity = new Vector3(horizontalVelocity * transform.forward.x, verticalVelocity * (transform.forward.y + 1), horizontalVelocity * transform.forward.z);
-                rigidBody.AddRelativeForce(new Vector3(horizontalVelocity * transform.forward.x, verticalVelocity * (transform.forward.y + 1), horizontalVelocity * transform.forward.z), ForceMode.Impulse);
+                rigidBody.velocity = new Vector3(horizontalVelocity * transform.forward.x, verticalVelocity * (transform.forward.y + 1), horizontalVelocity * transform.forward.z);
+                // rigidBody.AddRelativeForce(new Vector3(horizontalVelocity * transform.forward.x, verticalVelocity * (transform.forward.y + 1), horizontalVelocity * transform.forward.z), ForceMode.Impulse);
                 lastShot = Time.time;
             }
         }
     }
-    //private void OnCollisionEnter(Collision collision) {
-    //   // Rigidbody rigidBody = inst.GetComponent<Rigidbody>();
-    //   // rigidBody.velocity = new Vector3(0, 0, 0);
-    //}
 }

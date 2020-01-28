@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private float speed;
+    public float Speed
+    {
+        get
+        {
+            return this.speed;
+        }
+        set
+        {
+            this.speed = value;
+        }
+    }
+
 
     public Rigidbody rigidBody;
     [SerializeField] private string playerHOR, PlayerVer, PlayerInter, PlayerFire;
-    [SerializeField] private float speed;
     [SerializeField] private float rotationSpeed;
 
     private void Start()

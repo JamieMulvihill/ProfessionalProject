@@ -16,7 +16,7 @@ public class Virus : MonoBehaviour
     }
 
     void AreaOfEffect(GameObject hitPlayer) {
-
+        //Apply poisin to the health of hitPlayer;
     }
     private void OnCollisionEnter(Collision collision) {
         rigidbody.velocity = Vector3.zero;
@@ -25,10 +25,10 @@ public class Virus : MonoBehaviour
 
             if (hit.tag != "Biologist") {
                 AreaOfEffect(hit.gameObject);
-               // Destroy(gameObject);
+               Destroy(gameObject);
             }
         }
-       // Destroy(gameObject, 0.2f);
+        Destroy(gameObject, 0.2f);
     }
 
 }
