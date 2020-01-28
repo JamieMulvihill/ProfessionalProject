@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ea156591892183409477e72851711cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeds: {fileID: 2720676404203417896, guid: c66ae8cc400a40a478c05d59eaa7c71b, type: 3}
+  vines: {fileID: 646117286371248911, guid: dd0705ed34e85f44eb9c91656b515a97, type: 3}
   playerFire: Fire1
   verticalVelocity: 5
   horizontalVelocity: 5
