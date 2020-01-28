@@ -7,6 +7,7 @@ TagManager:
   - Biologist
   - Virus
   - Ground
+  - Chemist
   layers:
   - Default
   - TransparentFX
