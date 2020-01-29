@@ -17,13 +17,11 @@ public class Virus : MonoBehaviour
 
     void AreaOfEffect(GameObject hitPlayer) {
         //Apply poisin to the health of hitPlayer;
-        // hitPlayer.GetComponent<Health>().isPoisioned = true;
         Health playerHealth = hitPlayer.GetComponent<Health>();
-        if (playerHealth != null)
-        {
+        if (playerHealth != null) {
+            playerHealth.isPoisioned = true;
             playerHealth.PoisionDamage();
         }
-       // hitPlayer.GetComponent<Health>().PoisionDamage();
     }
     private void OnCollisionEnter(Collision collision) {
         rigidbody.velocity = Vector3.zero;
