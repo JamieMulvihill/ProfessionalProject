@@ -21,9 +21,6 @@ public class PipeLineWaypoints : MonoBehaviour
 
     private void Update()
     {
-        //if (about to crash)
-        //    don't;
-
         if (spawnItem == true)
         {
             spawnItem = false;
