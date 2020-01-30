@@ -5,11 +5,11 @@ using UnityEngine;
 public class camManager : MonoBehaviour
 {
     [Header("Game Objects")]
-    public GameObject topCamera;
-    public GameObject orbitCamera;
+    [SerializeField] private GameObject topCamera;
+    [SerializeField] private GameObject orbitCamera;
 
     [Header("Bools")]
-    public bool orbitCam;
+    [SerializeField] private bool orbitCam;
 
     void Start()
     {

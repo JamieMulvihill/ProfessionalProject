@@ -5,16 +5,11 @@ using UnityEngine;
 public class OrbitCam : MonoBehaviour
 {
     [Header("Game Objects")]
-    public GameObject camPivot;
-    public GameObject target;
+    [SerializeField] private GameObject camPivot;
+    [SerializeField] private GameObject target;
 
     [Header("Floats")]
     [SerializeField] private float time;
-
-    void Start()
-    {
-        
-    }
 
     void Update()
     {

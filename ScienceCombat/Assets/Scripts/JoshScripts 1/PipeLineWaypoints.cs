@@ -5,15 +5,24 @@ using UnityEngine;
 public class PipeLineWaypoints : MonoBehaviour
 {
     [Header("GameObjects")]
-    public GameObject item;
-
-    [Header("Bools")]
-    public bool spawnItem;
-
+    [SerializeField] private GameObject item;
 
     [Header("Waypoints")]
-    public GameObject[] waypoints = new GameObject[32];
-    public GameObject endPoint;
+    public GameObject[] entranceWPs = new GameObject[3];
+    public GameObject[] PL1WPs = new GameObject[29];
+    public GameObject[] PL2WPs = new GameObject[24];
+    public GameObject[] PL3WPs = new GameObject[27];
+    public GameObject PL1endPoint;
+    public GameObject PL2endPoint;
+    public GameObject PL3endPoint;
+    public GameObject conducter;
+
+    [Header("Bools")]
+    [SerializeField] private bool spawnItem;
+
+    [Header("Floats")]
+    [SerializeField] private float delay;
+
     void Start()
     {
         spawnItem = true;
@@ -37,7 +46,7 @@ public class PipeLineWaypoints : MonoBehaviour
     IEnumerator Delay()
     {
         SpawnItem();
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(delay);
         spawnItem = true;
     }
 }
