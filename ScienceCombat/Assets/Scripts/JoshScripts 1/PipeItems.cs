@@ -23,15 +23,28 @@ public class PipeItems : MonoBehaviour
 
     [Header("Scripts")]
     private PipeLineWaypoints plw;
+    private ParticleSystem particles;
+    private Manager managerScript;
+
+    [Header("Colours")]
+    private Color lightBlue;
+    private Color pink;
+    private Color orange;
 
     private void Start()
     {
         manager = GameObject.FindGameObjectWithTag("Manager");
+        managerScript = manager.GetComponent<Manager>();
         plw = manager.GetComponent<PipeLineWaypoints>();
+        particles = this.gameObject.GetComponentInChildren<ParticleSystem>();
 
         T = this.transform;
         T.position = plw.entranceWPs[0].transform.position;
         goToT = plw.entranceWPs[1].transform;
+
+        lightBlue = new Color(0,171,197);
+        pink = new Color(253, 71, 255);
+        orange = new Color(255, 154, 0);
 
         entranceCounter = 1;
         PLCounter = 0;
@@ -42,6 +55,22 @@ public class PipeItems : MonoBehaviour
     void ChoosePipeLine()
     {
         chosenPipeLine = Random.Range(1, 4);
+
+        if (managerScript.activateItemParticles == true)
+        {
+            switch (chosenPipeLine)
+            {
+                case 1:
+                    particles.startColor = lightBlue;
+                    break;
+                case 2:
+                    particles.startColor = pink;
+                    break;
+                case 3:
+                    particles.startColor = orange;
+                    break;
+            }
+        }
     }
 
     void Update()

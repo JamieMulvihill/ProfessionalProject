@@ -17,22 +17,23 @@ public class PipeLineWaypoints : MonoBehaviour
     public GameObject PL3endPoint;
     public GameObject conducter;
 
-    [Header("Bools")]
-    [SerializeField] private bool spawnItem;
+    [Header("Scripts")]
+    private Manager managerScript;
 
-    [Header("Floats")]
-    [SerializeField] private float delay;
 
     void Start()
     {
-        spawnItem = true;
+        managerScript = this.gameObject.GetComponent<Manager>();
+
+        managerScript.spawnItem = true;
+        managerScript.activateItemParticles = true;
     }
 
     private void Update()
     {
-        if (spawnItem == true)
+        if (managerScript.spawnItem == true)
         {
-            spawnItem = false;
+            managerScript.spawnItem = false;
             StartCoroutine(Delay());
         }
     }
@@ -40,13 +41,13 @@ public class PipeLineWaypoints : MonoBehaviour
     void SpawnItem()
     {
         GameObject newItem = Instantiate(item);
-        print("item spawned");
+        //print("item spawned");
     }
 
     IEnumerator Delay()
     {
         SpawnItem();
-        yield return new WaitForSeconds(delay);
-        spawnItem = true;
+        yield return new WaitForSeconds(managerScript.itemSpawnDelay);
+        managerScript.spawnItem = true;
     }
 }

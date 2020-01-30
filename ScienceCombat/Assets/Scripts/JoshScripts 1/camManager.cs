@@ -8,24 +8,25 @@ public class camManager : MonoBehaviour
     [SerializeField] private GameObject topCamera;
     [SerializeField] private GameObject orbitCamera;
 
-    [Header("Bools")]
-    [SerializeField] private bool orbitCam;
+    [Header("Scripts")]
+    private Manager managerScript;
+
 
     void Start()
     {
-        orbitCam = false;
+        managerScript = this.gameObject.GetComponent<Manager>();
     }
 
     void Update()
     {
-        if(orbitCam == false)
+        if(managerScript.orbitCam == false)
         {
             if(orbitCamera == true)
             {
                 orbitCamera.SetActive(false);
                 topCamera.SetActive(true);
             }
-        } else if(orbitCam == true)
+        } else if(managerScript.orbitCam == true)
         {
             if(topCamera == true)
             {
