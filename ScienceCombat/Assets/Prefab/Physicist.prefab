@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 2466507813489192646}
   - component: {fileID: 2466507813489192647}
   - component: {fileID: 4570229121583392855}
+  - component: {fileID: 3423044513703123039}
+  - component: {fileID: -8722950184395974396}
   m_Layer: 0
   m_Name: Physicist
   m_TagString: Untagged
@@ -108,13 +110,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda637b844f75b343a774525a1e45864, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 2466507813489192647}
-  playerHOR: Horizontal2
-  PlayerVer: Vertical2
-  PlayerInter: PickUp2
-  PlayerFire: Fire2
   speed: 10
-  rotationSpeed: 0.1
+  rigidBody: {fileID: 2466507813489192647}
+  playerHOR: Horizontal
+  PlayerVer: Vertical
+  PlayerInter: PickUp
+  PlayerFire: Fire1
+  rotationSpeed: 0.5
 --- !u!54 &2466507813489192647
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,9 +145,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81d80dd0a7eef6d4293db132092861a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnitude: 10
+  magnitude: 100
   radius: 0
   playerFire: Fire1
+--- !u!114 &3423044513703123039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466507813489192644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a034fecafa159eb4488e0f15008b105b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAlt: AltMove1
+--- !u!114 &-8722950184395974396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2466507813489192644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2920560339513c047a873b638ee7b6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  poisionDmg: 10
+  isPoisioned: 0
 --- !u!1 &4570229121499305032
 GameObject:
   m_ObjectHideFlags: 0

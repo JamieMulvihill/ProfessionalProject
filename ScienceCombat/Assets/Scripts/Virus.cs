@@ -17,6 +17,11 @@ public class Virus : MonoBehaviour
 
     void AreaOfEffect(GameObject hitPlayer) {
         //Apply poisin to the health of hitPlayer;
+        Health playerHealth = hitPlayer.GetComponent<Health>();
+        if (playerHealth != null) {
+            playerHealth.isPoisioned = true;
+            playerHealth.PoisionDamage();
+        }
     }
     private void OnCollisionEnter(Collision collision) {
         rigidbody.velocity = Vector3.zero;
@@ -24,7 +29,7 @@ public class Virus : MonoBehaviour
         foreach (Collider hit in hitObjecets) {
 
             if (hit.tag != "Biologist") {
-                AreaOfEffect(hit.gameObject);
+               AreaOfEffect(hit.gameObject);
                Destroy(gameObject);
             }
         }

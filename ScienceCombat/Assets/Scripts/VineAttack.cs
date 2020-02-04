@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VineAttack : MonoBehaviour
 {
-    public GameObject vines;
+    public GameObject seeds;
     [SerializeField] private string playerFire;
     [SerializeField] private float verticalVelocity;
     [SerializeField] private float horizontalVelocity;
@@ -21,7 +21,7 @@ public class VineAttack : MonoBehaviour
             {
                 Vector3 SpawnPoint = transform.position + (transform.forward * 2) + (transform.up * 2);
 
-                inst = Instantiate(vines, SpawnPoint, Quaternion.LookRotation(transform.forward, transform.up));
+                inst = Instantiate(seeds, SpawnPoint, Quaternion.LookRotation(transform.forward, transform.up));
                 Rigidbody rigidBody = inst.GetComponent<Rigidbody>();
                 rigidBody.transform.position = SpawnPoint;
                 rigidBody.velocity = new Vector3(horizontalVelocity * transform.forward.x, verticalVelocity * (transform.forward.y + 1), horizontalVelocity * transform.forward.z);

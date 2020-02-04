@@ -20,7 +20,7 @@ public class Laser : MonoBehaviour{
         if (Mathf.Abs(Input.GetAxis(playerFire)) > 0.01f)
         {
             hit = Physics.RaycastAll(transform.position, transform.forward, magnitude);
-            Debug.DrawRay(transform.position, transform.forward * magnitude, Color.green, .5f);
+            Debug.DrawRay(transform.position, transform.forward * magnitude, Color.green, .1f);
 
             if (hit.Length > 0)
             {
@@ -28,7 +28,7 @@ public class Laser : MonoBehaviour{
                 foreach (RaycastHit hit in hit)
                 {
 
-                    if (hit.collider.GetComponent<Rigidbody>() != null)
+                    if (hit.collider != null)
                     {
 
                         line.enabled = true;
@@ -37,7 +37,8 @@ public class Laser : MonoBehaviour{
                         GameObject enemy = hit.collider.gameObject;
                         if (enemy != null)
                         {
-                            Destroy(enemy);
+                            print("Hit GameObject");
+                           // Destroy(enemy);
                         }
                         break;
                     }
